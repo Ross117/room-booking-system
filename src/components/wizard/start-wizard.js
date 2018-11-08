@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
-class Page1 extends Component {
+class StartWizard extends Component {
   render() {
     return (
         <div style={{ flexGrow: 1 }}>
@@ -34,4 +34,4 @@ class Page1 extends Component {
   }
 }
 
-export default Page1;
+export default StartWizard;

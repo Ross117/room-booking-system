@@ -20,6 +20,21 @@ const getMyMeetings = () => new Promise((resolve, reject) => {
     }])
 })
 
+const getRecommendations = () => new Promise((resolve, reject) => {
+    resolve([{
+        startTime: '15:00',
+        endTime: '16:00',
+        room: '1-B (6)',
+        tag: 'Best'
+    }, {
+        startTime: '15:00',
+        endTime: '16:00',
+        room: '1-B (6)',
+        tag: ''
+    }])
+})
+
 export {
-    getMyMeetings
+    getMyMeetings,
+    getRecommendations
 }
