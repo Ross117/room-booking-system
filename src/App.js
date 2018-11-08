@@ -5,11 +5,13 @@ import MyMeetingsTable from './components/my-meetings-table';
 import StartWizard from './components/wizard/start-wizard'
 import GetFacilities from './components/wizard/facilities'
 import MeetingRecommendations from './components/wizard/meeting-recommendations'
+import GetDetails from './components/wizard/get-details'
 
 class App extends Component {
 
   state = {
     page: 'home',
+    specificTime: false,
     facilities: {
       audioCon: false,
       videoCon: false,
@@ -32,16 +34,21 @@ class App extends Component {
           this.state.page === 'home' ? 
             <MyMeetingsTable newMeeting={() => this.setState({ page: 'startWizard' })} /> : 
           this.state.page === 'startWizard' ? 
-            <StartWizard yes={() => this.setState({ page: 'getDetails' })} no={() => this.setState({ page: 'getDetails' })} /> :
+            <StartWizard 
+              yes={() => this.setState({ specificTime: true, page: 'getDetails' })} 
+              no={() => this.setState({ page: 'getDetails' })} /> :
           this.state.page === 'getDetails' ? 
-            <div /> :
+            <GetDetails 
+              next={() => this.setState({ page: 'getFacilities' })} /> :
           this.state.page === 'getFacilities' ? 
-            <GetFacilities facilities={this.state.facilities} stateChanged={this.updateFacilities.bind(this)} /> :
+            <GetFacilities 
+              facilities={this.state.facilities} 
+              stateChanged={this.updateFacilities.bind(this)} 
+              next={() => this.setState({ page: 'recommendations' })} /> :
           this.state.page === 'recommendations' ? 
             <MeetingRecommendations /> :
             <div />
         }
-        
       </div>
     );
   }

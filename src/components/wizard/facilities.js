@@ -72,7 +72,7 @@ class GetFacilities extends Component {
                         <Grid item xs={6} sm={3}>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                            <Button size="large" variant="contained" color="secondary" onClick={this.props.no}>
+                            <Button size="large" variant="contained" color="secondary" onClick={this.props.next}>
                                 Next
                             </Button>
                         </Grid>

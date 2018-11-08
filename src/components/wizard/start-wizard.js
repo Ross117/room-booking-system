@@ -18,10 +18,6 @@ class StartWizard extends Component {
                             </Button>
                         </Grid>
                         <Grid item xs={6} sm={3}>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
-                        </Grid>
-                        <Grid item xs={6} sm={3}>
                             <Button size="large" variant="contained" color="secondary" onClick={this.props.no}>
                                 No
                             </Button>
