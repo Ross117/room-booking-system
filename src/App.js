@@ -11,7 +11,13 @@ class App extends Component {
 
   state = {
     page: 'home',
-    specificTime: false,
+    specificTime: true,
+    details: {
+      day: "",
+      startTime: "",
+      duration: 0,
+      attendees: 0
+    },
     facilities: {
       audioCon: false,
       videoCon: false,
@@ -39,9 +45,11 @@ class App extends Component {
               no={() => this.setState({ page: 'getDetails' })} /> :
           this.state.page === 'getDetails' ? 
             <GetDetails 
+              details={this.state.details}
               next={() => this.setState({ page: 'getFacilities' })} /> :
           this.state.page === 'getFacilities' ? 
             <GetFacilities 
+              specificTime={this.state.specificTime}
               facilities={this.state.facilities} 
               stateChanged={this.updateFacilities.bind(this)} 
               next={() => this.setState({ page: 'recommendations' })} /> :
