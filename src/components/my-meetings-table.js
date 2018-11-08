@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
 
 class MyMeetingsTable extends Component {
 
@@ -45,8 +46,8 @@ class MyMeetingsTable extends Component {
                                 <TableCell>{ meeting.room }</TableCell>
                                 <TableCell>
                                     { meeting.current ? 
-                                        <Button variant="outlined" color="primary">
-                                            Accept
+                                        <Button variant="contained" color="primary">
+                                            I'm Here!
                                         </Button>
                                     :
                                         <Button variant="outlined" color="secondary">
@@ -59,6 +60,11 @@ class MyMeetingsTable extends Component {
                     </TableBody>
                 </Table>
             </Paper>
+            <div style={{ position: 'absolute', right: 10, bottom: 10 }}>
+                <Button variant="fab" color="secondary" aria-label="Add" onClick={this.props.newMeeting}>
+                    <AddIcon />
+                </Button>
+            </div>
         </div>
         );
     }
